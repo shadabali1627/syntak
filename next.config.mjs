@@ -8,12 +8,16 @@ const nextConfig = {
         styledComponents: true,
     },
 
-    // 3. Allows images from Sanity to be shown
+    // 3. Allows images from Sanity and Unsplash to be shown
     images: {
         remotePatterns: [
             {
                 protocol: 'https',
                 hostname: 'cdn.sanity.io',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
             },
         ],
     },

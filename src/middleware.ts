@@ -1,12 +1,11 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-export function middleware(request: NextRequest) {
-    // Simple check: If url starts with /dashboard, logic goes here
-    // For now, we just let it pass until you add Auth
-    return NextResponse.next();
-}
+const isDashboardRoute = createRouteMatcher(["/dashboard(.*)"]);
+
+export default clerkMiddleware((auth: any, req: any) => {
+    if (isDashboardRoute(req)) auth().protect();
+});
 
 export const config = {
-    matcher: '/dashboard/:path*',
+    matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };

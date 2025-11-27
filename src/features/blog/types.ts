@@ -2,9 +2,11 @@ export interface BlogPost {
     slug: string;
     title: string;
     excerpt?: string;
-    content?: any; // Changed from string to any for PortableText
+    content?: any; // PortableText content
     date: string;
     author: string;
     category?: string;
-    imageUrl?: string; // <--- NEW FIELD
+    imageUrl?: string;
+    mainImage?: any;
+    readTime?: string;
 }

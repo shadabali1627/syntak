@@ -1,10 +1,18 @@
 import Link from "next/link";
-import { Plus, Search, MoreHorizontal, FileText, Calendar } from "lucide-react";
+import { Plus, MoreHorizontal, FileText, Calendar } from "lucide-react";
 import { getAdminPosts } from "@/features/blog/actions";
+import { SearchInput } from "@/components/ui/search-input";
 
-export default async function ContentPage() {
+export default async function ContentPage({
+    searchParams,
+}: {
+    searchParams?: {
+        query?: string;
+    };
+}) {
+    const query = searchParams?.query || "";
     // 1. Fetch REAL data from Sanity
-    const posts = await getAdminPosts();
+    const posts = await getAdminPosts(query);
 
     return (
         <div className="space-y-6">
@@ -26,15 +34,10 @@ export default async function ContentPage() {
                 </Link>
             </div>
 
-            {/* Search & Filter Bar (Visual only) */}
+            {/* Search & Filter Bar */}
             <div className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
                 <div className="relative flex-1">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                    <input
-                        type="text"
-                        placeholder="Search articles..."
-                        className="w-full bg-[#0d041c] border border-white/10 rounded-lg py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-primary/50"
-                    />
+                    <SearchInput />
                 </div>
                 <select className="bg-[#0d041c] border border-white/10 rounded-lg px-4 py-2 text-sm text-gray-300 focus:outline-none">
                     <option>All Status</option>
@@ -72,7 +75,7 @@ export default async function ContentPage() {
                                 </td>
                                 <td className="p-4">
                                     <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${post.status === "Published" ? "bg-green-500/10 text-green-400 border-green-500/20" :
-                                            "bg-gray-500/10 text-gray-400 border-gray-500/20"
+                                        "bg-gray-500/10 text-gray-400 border-gray-500/20"
                                         }`}>
                                         {post.status}
                                     </span>

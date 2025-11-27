@@ -2,14 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@layer base {
+  :root {
+    /* Light Mode Colors */
+    --background: #f9fafb;
+    --foreground: #130623;
+    --primary: #7c3aed;
+    --secondary: #f3f4f6;
+  }
+
+  .dark {
+    /* Dark Mode Colors */
     --background: #130623;
     --foreground: #ffffff;
+    --primary: #a78bfa;
+    --secondary: #1e0b36;
+  }
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
-    /* Smooth scrolling for the whole site */
-    scroll-behavior: smooth;
+  background: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
 }

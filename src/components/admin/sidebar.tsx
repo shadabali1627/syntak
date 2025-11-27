@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, FileText, Settings, LogOut, Users } from "lucide-react";
+import { LayoutDashboard, FileText, Settings, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { UserButton } from "@clerk/nextjs";
 
 const sidebarLinks = [
     { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
@@ -52,19 +53,14 @@ export function AdminSidebar() {
                 })}
             </nav>
 
-            {/* Footer / Logout */}
+            {/* Footer / User */}
             <div className="p-4 border-t border-white/10 bg-white/5">
-                <div className="flex items-center gap-3 mb-4 px-2">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-purple-500" />
-                    <div className="text-sm">
-                        <div className="text-white font-medium">Admin User</div>
-                        <div className="text-gray-500 text-xs">admin@syntak.com</div>
+                <div className="flex items-center gap-3 justify-center">
+                    <UserButton afterSignOutUrl="/" />
+                    <div className="text-sm text-white font-medium">
+                        Admin
                     </div>
                 </div>
-                <button className="flex items-center justify-center gap-2 w-full px-3 py-2 text-sm font-medium text-red-400 hover:bg-red-500/10 hover:text-red-300 rounded-lg transition-colors border border-transparent hover:border-red-500/20">
-                    <LogOut className="w-4 h-4" />
-                    Sign Out
-                </button>
             </div>
         </aside>
     );
