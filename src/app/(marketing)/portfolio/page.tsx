@@ -7,28 +7,28 @@ export default function PortfolioPage() {
         {
             title: "FinTech Dashboard",
             category: "Web Application",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+            image: "/images/portfolio-fintech.png",
             description: "A real-time financial analytics platform processing millions of transactions daily.",
             tags: ["Next.js", "TypeScript", "D3.js"],
         },
         {
             title: "E-Commerce Scale",
             category: "E-Commerce",
-            image: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=2070&auto=format&fit=crop",
+            image: "/images/portfolio-ecommerce.png",
             description: "Scalable headless commerce solution serving 50k+ concurrent users during flash sales.",
             tags: ["Shopify", "React", "Node.js"],
         },
         {
             title: "HealthAI",
             category: "Healthcare",
-            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+            image: "/images/portfolio-fintech.png",
             description: "AI-powered diagnostic assistant helping doctors make faster, more accurate decisions.",
             tags: ["Python", "TensorFlow", "AWS"],
         },
         {
             title: "Urban Mobility",
             category: "Mobile App",
-            image: "https://images.unsplash.com/photo-1473186505569-9c61870c11f9?q=80&w=2070&auto=format&fit=crop",
+            image: "/images/portfolio-ecommerce.png",
             description: "Smart city transportation app integrating public transit, ride-sharing, and payments.",
             tags: ["React Native", "Maps API", "Stripe"],
         },
@@ -38,11 +38,12 @@ export default function PortfolioPage() {
         <div className="max-w-7xl mx-auto py-12 px-6">
 
             {/* Header */}
-            <div className="text-center mb-20 animate-fade-in">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <div className="text-center mb-20 animate-fade-in relative">
+                <div className="absolute inset-0 -z-10 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-50 dark:opacity-20"></div>
+                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                     Our <span className="text-primary">Portfolio</span>
                 </h1>
-                <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+                <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
                     A showcase of our best work. We build products that solve real problems and drive growth.
                 </p>
             </div>
@@ -52,7 +53,7 @@ export default function PortfolioPage() {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="group relative rounded-3xl overflow-hidden bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:shadow-2xl transition-all duration-500"
+                        className="group relative rounded-3xl overflow-hidden bg-card border border-border hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
                     >
                         {/* Image Container */}
                         <div className="relative h-[300px] w-full overflow-hidden">
@@ -76,15 +77,15 @@ export default function PortfolioPage() {
                                     {project.category}
                                 </span>
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                            <h3 className="text-2xl font-bold text-foreground mb-3">
                                 {project.title}
                             </h3>
-                            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                            <p className="text-muted-foreground mb-6 leading-relaxed">
                                 {project.description}
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 {project.tags.map((tag, i) => (
-                                    <span key={i} className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-200 dark:bg-white/10 px-2 py-1 rounded-md">
+                                    <span key={i} className="text-xs font-medium text-muted-foreground bg-secondary px-2 py-1 rounded-md">
                                         {tag}
                                     </span>
                                 ))}
@@ -95,16 +96,17 @@ export default function PortfolioPage() {
             </div>
 
             {/* Bottom CTA */}
-            <div className="mt-20 text-center animate-slide-up [animation-delay:400ms] bg-primary/5 rounded-3xl p-12 border border-primary/10">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <div className="mt-20 text-center animate-slide-up [animation-delay:400ms] bg-primary/5 rounded-3xl p-12 border border-primary/10 relative overflow-hidden">
+                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[80px] -z-10" />
+                <h2 className="text-3xl font-bold text-foreground mb-4">
                     Have a project in mind?
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto">
+                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
                     Let's discuss how we can bring your vision to life.
                 </p>
                 <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-white font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
+                    className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
                 >
                     Start a Project <ArrowUpRight className="w-4 h-4" />
                 </Link>

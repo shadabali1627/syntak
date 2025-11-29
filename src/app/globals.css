@@ -4,19 +4,53 @@
 
 @layer base {
   :root {
-    /* Light Mode Colors */
-    --background: #f9fafb;
-    --foreground: #130623;
-    --primary: #7c3aed;
-    --secondary: #f3f4f6;
+    /* Light Mode Colors - Richer Palette */
+    --background: #ffffff;
+    --foreground: #0f172a; /* Slate 900 */
+    
+    --primary: #6366f1; /* Indigo 500 */
+    --primary-foreground: #ffffff;
+    
+    --secondary: #f1f5f9; /* Slate 100 */
+    --secondary-foreground: #0f172a;
+    
+    --muted: #f8fafc; /* Slate 50 */
+    --muted-foreground: #64748b; /* Slate 500 */
+    
+    --accent: #f1f5f9; /* Slate 100 */
+    --accent-foreground: #0f172a;
+    
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    
+    --border: #e2e8f0; /* Slate 200 */
+    --input: #e2e8f0;
+    --ring: #6366f1;
   }
 
   .dark {
-    /* Dark Mode Colors */
-    --background: #130623;
-    --foreground: #ffffff;
-    --primary: #a78bfa;
-    --secondary: #1e0b36;
+    /* Dark Mode Colors - Deep & Vibrant */
+    --background: #020617; /* Slate 950 */
+    --foreground: #f8fafc; /* Slate 50 */
+    
+    --primary: #818cf8; /* Indigo 400 */
+    --primary-foreground: #0f172a;
+    
+    --secondary: #1e293b; /* Slate 800 */
+    --secondary-foreground: #f8fafc;
+    
+    --muted: #0f172a; /* Slate 900 */
+    --muted-foreground: #94a3b8; /* Slate 400 */
+    
+    --accent: #1e293b; /* Slate 800 */
+    --accent-foreground: #f8fafc;
+    
+    --card: #020617;
+    --card-foreground: #f8fafc;
+    
+    --border: #1e293b; /* Slate 800 */
+    --input: #1e293b;
+    --ring: #818cf8;
   }
 }
 

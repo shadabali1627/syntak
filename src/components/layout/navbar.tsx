@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useState, useEffect } from "react";
 
 export function Navbar() {
@@ -40,7 +39,7 @@ export function Navbar() {
     return (
         <>
             <header className="fixed top-0 z-50 w-full flex justify-center py-4 md:py-6 px-4">
-                <nav className="w-full max-w-5xl flex items-center justify-between bg-white/80 dark:bg-white/5 backdrop-blur-md border border-black/5 dark:border-white/10 rounded-full px-4 py-2 shadow-lg">
+                <nav className="w-full max-w-5xl flex items-center justify-between bg-white/70 dark:bg-black/40 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full px-4 py-2 shadow-lg ring-1 ring-black/5">
 
                     {/* Logo (Visible on Mobile and Desktop) */}
                     <Link href="/" className="flex items-center gap-2 mr-4 group">
@@ -76,7 +75,6 @@ export function Navbar() {
 
                     {/* Right Side Actions */}
                     <div className="flex items-center gap-2">
-                        <ThemeToggle />
                         <div className="hidden md:block w-2" />
                         <Link
                             href="/start"

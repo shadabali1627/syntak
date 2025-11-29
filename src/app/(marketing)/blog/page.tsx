@@ -29,6 +29,7 @@ export default async function BlogPage() {
                 <div className="mb-20 animate-slide-up">
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 border-l-4 border-primary pl-4">Featured Article</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
                         {/* Image */}
                         <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-2xl group">
                             {featuredPost.mainImage && (

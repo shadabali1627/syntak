@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Zap, Shield, Globe, Cpu } from "lucide-react";
 import { getBlogPosts } from "@/features/blog/actions";
 import { BlogCard } from "@/features/blog/components/blog-card";
+import { HeroSection } from "@/components/HeroSection";
 
 export default async function HomePage() {
     const posts = await getBlogPosts();
@@ -9,22 +11,22 @@ export default async function HomePage() {
 
     const features = [
         {
-            icon: <Zap className="w-6 h-6 text-primary" />,
+            icon: <Image src="/images/feature-speed.png" alt="Speed" width={64} height={64} className="w-16 h-16" />,
             title: "Lightning Fast",
             description: "Built on Next.js 14 with server components for sub-second page loads and optimal Core Web Vitals.",
         },
         {
-            icon: <Shield className="w-6 h-6 text-primary" />,
+            icon: <Image src="/images/feature-security.png" alt="Security" width={64} height={64} className="w-16 h-16" />,
             title: "Enterprise Security",
             description: "Bank-grade security protocols, automated backups, and role-based access control out of the box.",
         },
         {
-            icon: <Globe className="w-6 h-6 text-primary" />,
+            icon: <Image src="/images/feature-global.png" alt="Global" width={64} height={64} className="w-16 h-16" />,
             title: "Global Scale",
             description: "Deploy to the edge in seconds. Your content is cached and served from 300+ locations worldwide.",
         },
         {
-            icon: <Cpu className="w-6 h-6 text-primary" />,
+            icon: <Image src="/images/feature-ai.png" alt="AI" width={64} height={64} className="w-16 h-16" />,
             title: "AI Powered",
             description: "Integrated AI agents to automate content generation, SEO optimization, and customer support.",
         },
@@ -40,54 +42,15 @@ export default async function HomePage() {
     return (
         <div className="flex flex-col gap-0 pb-0">
             {/* Hero Section */}
-            <section className="relative flex flex-col items-center justify-center text-center pt-20 pb-32 max-w-5xl mx-auto px-6 overflow-hidden md:overflow-visible">
-                {/* Background Blur Effect */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] -z-10 pointer-events-none" />
+            <HeroSection />
 
-                {/* Small Badge */}
-                <div className="animate-fade-in inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-sm font-medium text-primary mb-8 shadow-sm">
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    Syntak v1.0 is live
-                </div>
-
-                <h1 className="animate-slide-up [animation-delay:100ms] text-4xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gray-900 dark:text-white mb-8 leading-tight">
-                    Build Scalable <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-pink-400">
-                        Digital Experiences
-                    </span>
-                </h1>
-
-                <p className="animate-slide-up [animation-delay:200ms] text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-12 leading-relaxed">
-                    Syntak provides the architecture you need to scale from a simple blog
-                    to a complex enterprise application without rewriting code.
-                </p>
-
-                <div className="animate-slide-up [animation-delay:300ms] flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                    <Link
-                        href="/blog"
-                        className="px-8 py-4 rounded-full bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl"
-                    >
-                        Read the Blog
-                    </Link>
-                    <Link
-                        href="/dashboard"
-                        className="px-8 py-4 rounded-full bg-white dark:bg-transparent border border-gray-200 hover:bg-gray-50 dark:border-white/20 dark:hover:bg-white/10 transition-all hover:scale-105 flex items-center justify-center gap-2 text-gray-900 dark:text-white font-medium shadow-sm"
-                    >
-                        Admin Panel <ArrowRight className="w-4 h-4" />
-                    </Link>
-                </div>
-            </section>
-
-            {/* Stats Section - White Background */}
-            <section className="border-y border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 py-16">
+            {/* Stats Section - Soft Background */}
+            <section className="border-y border-border bg-primary/5 dark:bg-white/5 py-16">
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                     {stats.map((stat, index) => (
                         <div key={index} className="flex flex-col gap-2">
-                            <span className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">{stat.value}</span>
-                            <span className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">{stat.label}</span>
+                            <span className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">{stat.value}</span>
+                            <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest">{stat.label}</span>
                         </div>
                     ))}
                 </div>
@@ -96,10 +59,10 @@ export default async function HomePage() {
             {/* Features Grid - Gray Background (Default) */}
             <section className="py-24 max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
                         Everything you need to <span className="text-primary">scale</span>
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+                    <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
                         A comprehensive suite of tools designed to help you build better products faster.
                     </p>
                 </div>
@@ -108,15 +71,15 @@ export default async function HomePage() {
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="p-8 rounded-3xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl dark:hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
+                            className="p-8 rounded-3xl bg-card border border-border shadow-sm hover:shadow-xl hover:border-primary/20 hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 group"
                         >
-                            <div className="mb-6 p-4 bg-primary/10 dark:bg-white/5 rounded-2xl w-fit">
+                            <div className="mb-6 p-4 bg-primary/10 dark:bg-white/5 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300">
                                 {feature.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                            <h3 className="text-xl font-bold text-foreground mb-3">
                                 {feature.title}
                             </h3>
-                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <p className="text-muted-foreground leading-relaxed">
                                 {feature.description}
                             </p>
                         </div>
@@ -124,11 +87,13 @@ export default async function HomePage() {
                 </div>
             </section>
 
-            {/* Recent Posts - White Background */}
-            <section className="py-24 bg-white dark:bg-transparent border-y border-gray-200 dark:border-none">
+            {/* Recent Posts - Pattern Background */}
+            <section className="py-24 bg-muted/50 dark:bg-transparent border-y border-border relative overflow-hidden">
+                <div className="absolute inset-0 -z-10 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-50 dark:opacity-20"></div>
+
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex items-center justify-between mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                             Latest from the Blog
                         </h2>
                         <Link href="/blog" className="hidden md:flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors">
