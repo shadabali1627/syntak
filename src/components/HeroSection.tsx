@@ -14,6 +14,7 @@ export function HeroSection() {
                     src="/images/hero-bg.png"
                     alt="Hero Background"
                     fill
+                    sizes="100vw"
                     className="object-cover object-center opacity-90 dark:opacity-20"
                     priority
                 />
