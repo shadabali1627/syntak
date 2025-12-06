@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const post = await getBlogPostBySlug(params.slug);
+    const decodedSlug = decodeURIComponent(params.slug);
+    const post = await getBlogPostBySlug(decodedSlug);
 
     if (!post) {
         return {
@@ -35,8 +36,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+    const decodedSlug = decodeURIComponent(params.slug);
+
     // 1. Fetch the REAL post from Sanity
-    const post = await getBlogPostBySlug(params.slug);
+    const post = await getBlogPostBySlug(decodedSlug);
 
     // 2. If it doesn't exist in Sanity, show 404
     if (!post) {

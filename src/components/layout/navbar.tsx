@@ -38,21 +38,24 @@ export function Navbar() {
 
     return (
         <>
-            <header className="fixed top-0 z-50 w-full flex justify-center py-4 md:py-6 px-4">
-                <nav className="w-full max-w-5xl flex items-center justify-between bg-white/70 dark:bg-black/40 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-full px-4 py-2 shadow-lg ring-1 ring-black/5">
+            <header className="fixed top-0 z-50 w-full flex justify-center py-0">
+                <nav className="w-full flex items-center justify-between bg-[#050A18]/90 backdrop-blur-md border-b border-white/5 px-6 py-4 shadow-lg">
 
                     {/* Logo (Visible on Mobile and Desktop) */}
                     <Link href="/" className="flex items-center gap-2 mr-4 group">
-                        <div className="bg-primary/10 p-1.5 rounded-lg group-hover:bg-primary/20 transition-colors">
-                            <div className="w-5 h-5 bg-gradient-to-br from-primary to-purple-600 rounded-md" />
+                        <div className="p-1.5 rounded-lg transition-colors">
+                            {/* Simple Gold Icon Placeholder */}
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#D4AF7A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
                         </div>
-                        <span className="font-bold text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300">
+                        <span className="font-bold text-xl tracking-tight text-white">
                             Syntak
                         </span>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-1">
+                    <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => {
                             const isActive = pathname === link.href;
                             return (
@@ -60,10 +63,10 @@ export function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     className={cn(
-                                        "relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-1",
+                                        "relative text-sm font-medium transition-all duration-300 flex items-center gap-1",
                                         isActive
-                                            ? "bg-black/5 text-black dark:bg-white/10 dark:text-white shadow-sm"
-                                            : "text-gray-600 hover:text-black hover:bg-black/5 dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/5"
+                                            ? "text-[#D4AF7A]"
+                                            : "text-gray-300 hover:text-[#D4AF7A]"
                                     )}
                                 >
                                     {link.name}
@@ -78,7 +81,7 @@ export function Navbar() {
                         <div className="hidden md:block w-2" />
                         <Link
                             href="/start"
-                            className="hidden md:block bg-primary hover:bg-primary/90 text-white dark:text-[#1e0b36] font-semibold px-6 py-2.5 rounded-full text-sm transition-colors"
+                            className="hidden md:block bg-[#D4AF7A] hover:bg-[#C6A678] text-[#050A18] font-semibold px-6 py-2.5 rounded-md text-sm transition-colors"
                         >
                             Get Started
                         </Link>
@@ -86,7 +89,7 @@ export function Navbar() {
                         {/* Mobile Menu Button */}
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
+                            className="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors text-white"
                         >
                             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                         </button>
@@ -96,15 +99,15 @@ export function Navbar() {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-white dark:bg-[#130623] pt-24 px-6 md:hidden animate-in slide-in-from-top-10 duration-200">
+                <div className="fixed inset-0 z-40 bg-[#050A18] pt-24 px-6 md:hidden animate-in slide-in-from-top-10 duration-200">
                     <div className="flex flex-col gap-4">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
                                 className={cn(
-                                    "text-2xl font-bold py-4 border-b border-gray-100 dark:border-white/5",
-                                    pathname === link.href ? "text-primary" : "text-gray-900 dark:text-white"
+                                    "text-2xl font-bold py-4 border-b border-white/5",
+                                    pathname === link.href ? "text-[#D4AF7A]" : "text-white"
                                 )}
                             >
                                 {link.name}
@@ -112,7 +115,7 @@ export function Navbar() {
                         ))}
                         <Link
                             href="/start"
-                            className="mt-4 w-full bg-primary text-white dark:text-[#1e0b36] font-bold text-center py-4 rounded-xl text-lg"
+                            className="mt-4 w-full bg-[#D4AF7A] text-[#050A18] font-bold text-center py-4 rounded-xl text-lg"
                         >
                             Get Started
                         </Link>

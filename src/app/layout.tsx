@@ -8,6 +8,7 @@ const outfit = Outfit({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "Syntak | Scalable Future",
     description: "A state-of-the-art scalable platform.",
+    metadataBase: new URL("http://localhost:3000"),
 };
 
 export default function RootLayout({

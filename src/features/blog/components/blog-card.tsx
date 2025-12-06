@@ -12,7 +12,7 @@ export function BlogCard({ post }: BlogCardProps) {
     return (
         <article className="group flex flex-col h-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden hover:shadow-xl dark:hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
             {/* Image */}
-            {post.mainImage && (
+            {post.mainImage ? (
                 <div className="relative w-full h-56 overflow-hidden">
                     <Image
                         src={urlFor(post.mainImage).width(600).height(350).url()}
@@ -22,6 +22,10 @@ export function BlogCard({ post }: BlogCardProps) {
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+            ) : (
+                <div className="relative w-full h-56 overflow-hidden bg-gradient-to-br from-blue-900/20 to-purple-900/20 flex items-center justify-center">
+                    <span className="text-4xl font-bold text-white/10">Syntak</span>
                 </div>
             )}
 

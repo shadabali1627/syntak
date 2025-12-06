@@ -8,7 +8,7 @@ export default function MarketingLayout({
     return (
         <div className="relative min-h-screen flex flex-col">
             <Navbar />
-            <main className="flex-1 pt-28 px-6">{children}</main>
+            <main className="flex-1 pt-28">{children}</main>
             <footer className="py-10 text-center text-gray-500 dark:text-white/20 text-sm">
                 © 2025 Syntak Inc.
             </footer>
