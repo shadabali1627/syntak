@@ -86,16 +86,16 @@ export function HeroSection() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="flex flex-col items-center justify-center text-center md:-mt-32"
+                    className="flex flex-col items-center justify-center text-center md:-mt-80"
                 >
-                    <div className="relative w-56 h-56 md:w-72 md:h-72 mb-6 rounded-full overflow-hidden border-4 border-[#D4AF7A]/20 shadow-2xl shadow-[#D4AF7A]/10">
+                    <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 rounded-full overflow-hidden border-4 border-[#D4AF7A]/20 shadow-2xl shadow-[#D4AF7A]/10">
                         <Image
                             src="/images/shadab-ali.jpg"
                             alt="Shadab Ali"
                             fill
                             className="object-cover"
                             style={{ objectPosition: 'center 20%' }}
-                            sizes="(max-width: 768px) 224px, 288px"
+                            sizes="(max-width: 768px) 128px, 160px"
                         />
                     </div>
                     <h3 className="text-3xl font-bold text-white mb-2">Shadab Ali</h3>
