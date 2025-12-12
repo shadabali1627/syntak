@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ChatWidget } from "@/components/chat-widget";
 import { ProgressBar } from "@/components/ui/progress-bar";
+import { ClerkProvider } from '@clerk/nextjs';
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -19,20 +20,22 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <body className={`${outfit.className} min-h-screen antialiased`}>
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="light"
-                    enableSystem={false}
-                    forcedTheme="light"
-                    disableTransitionOnChange
-                >
-                    {children}
-                    <ProgressBar />
-                    <ChatWidget />
-                </ThemeProvider>
-            </body>
-        </html>
+        <ClerkProvider>
+            <html lang="en" suppressHydrationWarning>
+                <body className={`${outfit.className} min-h-screen antialiased`}>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="light"
+                        enableSystem={false}
+                        forcedTheme="light"
+                        disableTransitionOnChange
+                    >
+                        {children}
+                        <ProgressBar />
+                        <ChatWidget />
+                    </ThemeProvider>
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }
