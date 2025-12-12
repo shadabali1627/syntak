@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ChatWidget } from "@/components/chat-widget";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { ClerkProvider } from '@clerk/nextjs';
+import { Suspense } from "react";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -31,7 +32,9 @@ export default function RootLayout({
                         disableTransitionOnChange
                     >
                         {children}
-                        <ProgressBar />
+                        <Suspense fallback={null}>
+                            <ProgressBar />
+                        </Suspense>
                         <ChatWidget />
                     </ThemeProvider>
                 </body>
