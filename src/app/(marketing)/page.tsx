@@ -57,7 +57,7 @@ export default async function HomePage() {
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                     {stats.map((stat, index) => (
                         <div key={index} className="flex flex-col gap-2">
-                            <span className="text-4xl md:text-5xl font-bold text-[#D4AF7A] tracking-tight">{stat.value}</span>
+                            <span className="text-4xl md:text-5xl font-bold text-[#38bdf8] tracking-tight">{stat.value}</span>
                             <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">{stat.label}</span>
                         </div>
                     ))}

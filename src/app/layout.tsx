@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ChatWidget } from "@/components/chat-widget";
+import { ProgressBar } from "@/components/ui/progress-bar";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     {children}
+                    <ProgressBar />
                     <ChatWidget />
                 </ThemeProvider>
             </body>

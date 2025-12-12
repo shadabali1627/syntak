@@ -33,7 +33,7 @@
     --background: #020617; /* Slate 950 */
     --foreground: #f8fafc; /* Slate 50 */
     
-    --primary: #818cf8; /* Indigo 400 */
+    --primary: #38bdf8; /* Sky 400 - Electric Blue */
     --primary-foreground: #0f172a;
     
     --secondary: #1e293b; /* Slate 800 */
@@ -50,7 +50,7 @@
     
     --border: #1e293b; /* Slate 800 */
     --input: #1e293b;
-    --ring: #818cf8;
+    --ring: #38bdf8;
   }
 }
 

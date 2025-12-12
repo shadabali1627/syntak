@@ -33,7 +33,7 @@ export function HeroSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C6A678]/10 border border-[#C6A678]/20 backdrop-blur-md text-sm font-medium text-[#C6A678] mb-8 shadow-sm cursor-default"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/20 backdrop-blur-md text-sm font-medium text-[#38bdf8] mb-8 shadow-sm cursor-default"
                     >
                         Syntak v1.0 is live
                     </motion.div>
@@ -68,13 +68,13 @@ export function HeroSection() {
                     >
                         <Link
                             href="/blog"
-                            className="px-8 py-4 rounded-md bg-[#D4AF7A] text-[#050A18] hover:bg-[#C6A678] font-semibold transition-all hover:scale-105 shadow-lg"
+                            className="px-8 py-4 rounded-md bg-[#0ea5e9] text-white hover:bg-[#0284c7] font-semibold transition-all hover:scale-105 shadow-lg"
                         >
                             Read the Blog
                         </Link>
                         <Link
                             href="/dashboard"
-                            className="px-8 py-4 rounded-md bg-transparent border border-[#D4AF7A] text-[#D4AF7A] hover:bg-[#D4AF7A]/10 backdrop-blur-sm transition-all hover:scale-105 flex items-center justify-center gap-2 font-medium shadow-sm group"
+                            className="px-8 py-4 rounded-md bg-transparent border border-[#0ea5e9] text-[#0ea5e9] hover:bg-[#0ea5e9]/10 backdrop-blur-sm transition-all hover:scale-105 flex items-center justify-center gap-2 font-medium shadow-sm group"
                         >
                             Admin Panel <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
@@ -88,7 +88,7 @@ export function HeroSection() {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="flex flex-col items-center justify-center text-center md:-mt-80"
                 >
-                    <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 rounded-full overflow-hidden border-4 border-[#D4AF7A]/20 shadow-2xl shadow-[#D4AF7A]/10">
+                    <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 rounded-full overflow-hidden border-4 border-[#38bdf8]/20 shadow-2xl shadow-[#38bdf8]/10">
                         <Image
                             src="/images/shadab-ali.jpg"
                             alt="Shadab Ali"
@@ -99,7 +99,7 @@ export function HeroSection() {
                         />
                     </div>
                     <h3 className="text-3xl font-bold text-white mb-2">Shadab Ali</h3>
-                    <p className="text-[#D4AF7A] text-xl font-medium mb-2">AI Engineer</p>
+                    <p className="text-[#38bdf8] text-xl font-medium mb-2">AI Engineer</p>
                     <p className="text-gray-400">Email: shadabali1627@gmail.com</p>
                 </motion.div>
             </div>

@@ -160,7 +160,7 @@ export function ChatWidget() {
                                         className={cn(
                                             "max-w-[85%] p-3 text-sm leading-relaxed shadow-sm relative",
                                             message.role === 'user'
-                                                ? "bg-[#E3B576] text-black rounded-2xl rounded-br-sm"
+                                                ? "bg-[#38bdf8] text-white rounded-2xl rounded-br-sm"
                                                 : "bg-gray-800 text-white rounded-2xl rounded-tl-sm"
                                         )}
                                     >
@@ -228,14 +228,14 @@ export function ChatWidget() {
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     placeholder="Ask anything..."
-                                    className="w-full bg-gray-900 text-white text-sm rounded-full pl-4 pr-12 py-3 border border-transparent focus:border-[#E3B576] focus:ring-1 focus:ring-[#E3B576] outline-none transition-all placeholder:text-gray-500"
+                                    className="w-full bg-gray-900 text-white text-sm rounded-full pl-4 pr-12 py-3 border border-transparent focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8] outline-none transition-all placeholder:text-gray-500"
                                 />
                                 <button
                                     type="submit"
                                     disabled={!input.trim() || isLoading}
                                     className={cn(
                                         "absolute right-2 p-2 rounded-full transition-colors",
-                                        input.trim() ? "text-[#E3B576] hover:bg-white/5" : "text-gray-600 cursor-not-allowed"
+                                        input.trim() ? "text-[#38bdf8] hover:bg-white/5" : "text-gray-600 cursor-not-allowed"
                                     )}
                                 >
                                     <Send size={18} />
@@ -251,7 +251,7 @@ export function ChatWidget() {
                 onClick={() => setIsOpen(!isOpen)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-14 h-14 rounded-full bg-[#E3B576] flex items-center justify-center shadow-lg shadow-[#E3B576]/20 relative z-50 text-black hover:bg-[#d4a25e] transition-colors"
+                className="w-14 h-14 rounded-full bg-[#38bdf8] flex items-center justify-center shadow-lg shadow-[#38bdf8]/20 relative z-50 text-white hover:bg-[#0284c7] transition-colors"
             >
                 <AnimatePresence mode="wait" initial={false}>
                     <motion.div

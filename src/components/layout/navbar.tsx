@@ -46,7 +46,7 @@ export function Navbar() {
                         <div className="p-1.5 rounded-lg transition-colors">
                             {/* Simple Gold Icon Placeholder */}
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#D4AF7A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </div>
                         <span className="font-bold text-xl tracking-tight text-white">
@@ -65,8 +65,8 @@ export function Navbar() {
                                     className={cn(
                                         "relative text-sm font-medium transition-all duration-300 flex items-center gap-1",
                                         isActive
-                                            ? "text-[#D4AF7A]"
-                                            : "text-gray-300 hover:text-[#D4AF7A]"
+                                            ? "text-[#38bdf8]"
+                                            : "text-gray-300 hover:text-[#38bdf8]"
                                     )}
                                 >
                                     {link.name}
@@ -81,7 +81,7 @@ export function Navbar() {
                         <div className="hidden md:block w-2" />
                         <Link
                             href="/start"
-                            className="hidden md:block bg-[#D4AF7A] hover:bg-[#C6A678] text-[#050A18] font-semibold px-6 py-2.5 rounded-md text-sm transition-colors"
+                            className="hidden md:block bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-semibold px-6 py-2.5 rounded-md text-sm transition-colors"
                         >
                             Get Started
                         </Link>
@@ -107,7 +107,7 @@ export function Navbar() {
                                 href={link.href}
                                 className={cn(
                                     "text-2xl font-bold py-4 border-b border-white/5",
-                                    pathname === link.href ? "text-[#D4AF7A]" : "text-white"
+                                    pathname === link.href ? "text-[#38bdf8]" : "text-white"
                                 )}
                             >
                                 {link.name}
@@ -115,7 +115,7 @@ export function Navbar() {
                         ))}
                         <Link
                             href="/start"
-                            className="mt-4 w-full bg-[#D4AF7A] text-[#050A18] font-bold text-center py-4 rounded-xl text-lg"
+                            className="mt-4 w-full bg-[#0ea5e9] text-white font-bold text-center py-4 rounded-xl text-lg"
                         >
                             Get Started
                         </Link>

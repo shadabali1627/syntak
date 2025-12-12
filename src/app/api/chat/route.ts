@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     Always query the context before answering.`;
 
         const result = await streamText({
-            model: google('gemini-2.5-flash'),
+            model: google('gemma-3-27b-it'),
             system: systemPrompt,
             messages: messages.map((m: any) => ({
                 role: m.role,
