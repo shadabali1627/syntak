@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: syntak
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: NEXT_PUBLIC_SANITY_PROJECT_ID
+        sync: false
+      - key: NEXT_PUBLIC_SANITY_DATASET
+        value: production
+      - key: NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: GOOGLE_GENERATIVE_AI_API_KEY
+        sync: false
+      # Optional: Add if using private Sanity dataset
+      # - key: SANITY_API_READ_TOKEN
+      #   sync: false
